@@ -12,4 +12,7 @@ test('Minimum window substring', t => {
 
 	const result2 = main('AAABBBCCC', 'ABC');
 	t.same(result2, 'ABBBC');
+
+	const result3 = main('THELONGTEXT', 'ETT');
+	t.same(result3, 'TEXT');
 });

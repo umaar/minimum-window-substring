@@ -17,7 +17,6 @@ function containsEvery(str, from) {
 function minimumWindowSubtring(a, b, minimumWindowSize = b.length) {
 	for (let i = 0; i <= a.length - minimumWindowSize; i++) {
 		const windowContents = a.substr(i, minimumWindowSize);
-		console.log('\n:', windowContents, containsEvery(b, windowContents), '\n');
 
 		if (containsEvery(b, windowContents)) {
 			return windowContents;
