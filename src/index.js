@@ -6,4 +6,4 @@ require('babel-register')({
 require('babel-polyfill');
 
 const main = require('./main');
-console.log('\nthis:', main(), '\n');
+console.log('\nAnswer:', main('AAAAABBBB', 'BAB'), '\n');

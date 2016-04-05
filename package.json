@@ -6,7 +6,8 @@
   "scripts": {
     "test": "xo && ava",
     "test:watch": "ava --watch",
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "watch": "nodemon src/index.js"
   },
   "author": "Umar Hansa",
   "private": "true",

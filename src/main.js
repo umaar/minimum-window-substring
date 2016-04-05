@@ -3,8 +3,15 @@
 
 function containsEvery(str, from) {
 	let fromArr = from.split('');
+
 	return str.split('').every(char => {
-		fromArr.includes(char);
+		const index = fromArr.indexOf(char);
+		if (index > -1) {
+			fromArr.splice(index, 1);
+			return true;
+		} else {
+			return false;
+		}
 	});
 }
 
@@ -13,6 +20,10 @@ function minimumWindowSubtring(a, b) {
 	for (let i = 0; i < 7; i++) {
 		const windowContents = a.substr(i, minimumWindowSize);
 		console.log('\n:', windowContents, containsEvery(b, windowContents), '\n');
+
+		if (containsEvery(b, windowContents)) {
+			return windowContents;
+		}
 	}
 }
 
