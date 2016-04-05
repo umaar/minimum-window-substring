@@ -7,7 +7,6 @@ test('Function exists', t => {
 });
 
 test('Minimum window substring', t => {
-	// "AAAAABBBB", "BAB" -> "ABB"
 	const result = main('AAAAABBBB', 'BAB');
 	t.same(result, 'ABB');
 });

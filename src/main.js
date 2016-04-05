@@ -2,16 +2,15 @@
 // "AAAAABBBC", "BAB" === "ABB"
 
 function containsEvery(str, from) {
-	let fromArr = from.split('');
+	const fromArr = from.split('');
 
 	return str.split('').every(char => {
 		const index = fromArr.indexOf(char);
 		if (index > -1) {
 			fromArr.splice(index, 1);
-			return true;
-		} else {
-			return false;
 		}
+
+		return index > -1;
 	});
 }
 
