@@ -9,4 +9,7 @@ test('Function exists', t => {
 test('Minimum window substring', t => {
 	const result = main('AAAAABBBB', 'BAB');
 	t.same(result, 'ABB');
+
+	const result2 = main('AAABBBCCC', 'ABC');
+	t.same(result2, 'ABBBC');
 });

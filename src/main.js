@@ -1,5 +1,5 @@
 
-// "AAAAABBBC", "BAB" === "ABB"
+// "AAABBBCCC", "ABC" -> "ABBBC"
 
 function containsEvery(str, from) {
 	const fromArr = from.split('');
@@ -14,9 +14,8 @@ function containsEvery(str, from) {
 	});
 }
 
-function minimumWindowSubtring(a, b) {
-	const minimumWindowSize = b.length;
-	for (let i = 0; i < 7; i++) {
+function minimumWindowSubtring(a, b, minimumWindowSize = b.length) {
+	for (let i = 0; i <= a.length - minimumWindowSize; i++) {
 		const windowContents = a.substr(i, minimumWindowSize);
 		console.log('\n:', windowContents, containsEvery(b, windowContents), '\n');
 
@@ -24,6 +23,12 @@ function minimumWindowSubtring(a, b) {
 			return windowContents;
 		}
 	}
+
+	if (minimumWindowSize >= a.length) {
+		return false;
+	}
+
+	return minimumWindowSubtring(a, b, ++minimumWindowSize);
 }
 
 module.exports = minimumWindowSubtring;
